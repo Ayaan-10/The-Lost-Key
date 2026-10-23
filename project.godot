@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="LostKeys | Jame gam"
+run/main_scene="res://scenes/titlescreen.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [physics]
 

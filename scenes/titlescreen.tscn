@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhovje1a6mkfs"]
+
+[ext_resource type="Texture2D" uid="uid://8odnu44i734o" path="res://icon.svg" id="1_6d6rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diwod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu5tm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uq4ul"]
+
+[node name="titlescreen" type="Node2D" unique_id=1957469048]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2039981470]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_6d6rd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052701213]
+offset_left = 14.000002
+offset_top = 79.0
+offset_right = 610.85516
+offset_bottom = 773.7065
+scale = Vector2(0.54787165, 0.37137985)
+theme_override_constants/separation = 60
+
+[node name="quit game button" type="Button" parent="VBoxContainer" unique_id=1184895865]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_diwod")
+text = "quit game"
+
+[node name="start game button" type="Button" parent="VBoxContainer" unique_id=525885010]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yu5tm")
+text = "start game"
+
+[node name="settings button" type="Button" parent="VBoxContainer" unique_id=1912378623]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uq4ul")
+text = "settings"
