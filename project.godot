@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="LostKeys | Jame gam"
-run/main_scene="uid://cvb14115dd06u"
+
 config/features=PackedStringArray("4.7", "Mobile")
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [input]
 
