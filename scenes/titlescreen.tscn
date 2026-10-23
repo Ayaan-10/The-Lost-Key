@@ -1,54 +1,59 @@
 [gd_scene format=3 uid="uid://dhovje1a6mkfs"]
 
+[ext_resource type="Script" uid="uid://bkbtro6i68wn" path="res://scripts/titlescreen.gd" id="1_3jj3l"]
 [ext_resource type="Texture2D" uid="uid://8odnu44i734o" path="res://icon.svg" id="1_6d6rd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diwod"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu5tm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uq4ul"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diwod"]
+
 [node name="titlescreen" type="Node2D" unique_id=1957469048]
+script = ExtResource("1_3jj3l")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2039981470]
+texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_6d6rd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052701213]
-offset_left = 14.000002
+offset_left = 409.0
 offset_top = 177.0
-offset_right = 610.85516
+offset_right = 1005.85516
 offset_bottom = 823.2386
 scale = Vector2(0.54787165, 0.37137985)
 theme_override_constants/separation = 60
-
-[node name="quit game button" type="Button" parent="VBoxContainer" unique_id=1184895865]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 108
-theme_override_styles/normal = SubResource("StyleBoxEmpty_diwod")
-text = "quit game"
 
 [node name="start game button" type="Button" parent="VBoxContainer" unique_id=525885010]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 108
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yu5tm")
-text = "start game"
+text = "Start Game."
 
 [node name="settings button" type="Button" parent="VBoxContainer" unique_id=1912378623]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 108
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uq4ul")
-text = "settings"
+text = "Just a button."
+
+[node name="quit game button" type="Button" parent="VBoxContainer" unique_id=1184895865]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_diwod")
+text = "Quit Game."
 
 [node name="Label" type="Label" parent="." unique_id=1031355850]
-offset_left = 42.0
-offset_top = 76.0
-offset_right = 1374.8845
-offset_bottom = 235.3244
+offset_left = 299.0
+offset_top = 51.0
+offset_right = 1338.4945
+offset_bottom = 218.09631
 scale = Vector2(0.51467323, 0.51467323)
 theme_override_font_sizes/font_size = 60
 text = "game name omg"
+horizontal_alignment = 1
+vertical_alignment = 1
