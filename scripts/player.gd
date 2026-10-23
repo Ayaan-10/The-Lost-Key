@@ -1,0 +1,43 @@
+extends CharacterBody2D
+@onready var key: TextureRect = $"../Key"
+@onready var keyfall: AnimationPlayer = $"../Key/Keyfall"
+
+
+const SPEED = 300.0
+const  JUMP_VELOCITY = -400
+@onready var area_2d: Area2D = $"../Area2D"
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("move_left", "move_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	if direction > 0:
+		$Sprite2D.flip_h = false
+	elif direction < 0:
+		$Sprite2D.flip_h = true
+
+		
+	move_and_slide()
+
+@onready var animation_player: AnimationPlayer = $tripanim
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	animation_player.play("trip")
+	key.visible = true
+	keyfall.play("keyfall")
+	area_2d.queue_free()
+	
