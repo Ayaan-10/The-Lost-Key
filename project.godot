@@ -12,12 +12,19 @@ config_version=5
 
 config/name="TheTinyGiant (Teamproject)"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[autoload]
+
+X="*uid://bk8rxryvxrkjn"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotTogether/plugin.cfg")
 
 [physics]
 
