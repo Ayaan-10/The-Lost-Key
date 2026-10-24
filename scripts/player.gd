@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const  JUMP_VELOCITY = -400
-@onready var area_2d: Area2D = $"../Area2D"
+
 
 
 func _physics_process(delta: float) -> void:
@@ -34,10 +34,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 @onready var animation_player: AnimationPlayer = $tripanim
+@onready var label: Label = $"../Label"
+@onready var area_2d: Area2D = $"../Area2D"
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	animation_player.play("trip")
 	key.visible = true
 	keyfall.play("keyfall")
 	area_2d.queue_free()
+	label.visible = true
 	

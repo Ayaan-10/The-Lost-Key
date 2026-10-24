@@ -6,7 +6,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h83ex"]
 
 [node name="Player" type="CharacterBody2D" unique_id=201504000]
-position = Vector2(266.00003, 412.99997)
 collision_layer = 2
 script = ExtResource("1_g2els")
 
@@ -16,5 +15,5 @@ texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2013409059]
 visibility_layer = 2
-scale = Vector2(1.5024109, 1.9037935)
+scale = Vector2(-1.5815854, 2.1271996)
 shape = SubResource("CapsuleShape2D_h83ex")
