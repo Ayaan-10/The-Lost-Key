@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://fon5s06a7gp6"]
+
+[ext_resource type="Script" uid="uid://bgl2yry7tl45o" path="res://scripts/scene_2.gd" id="1_mejfh"]
+[ext_resource type="Texture2D" uid="uid://cmou41jw4lk2h" path="res://assets/tempscenegamejam2.png" id="1_xe0r6"]
+[ext_resource type="Texture2D" uid="uid://cq888aqu6jlwc" path="res://scenes/Untitled_design_6.png" id="2_vsrvg"]
+[ext_resource type="PackedScene" uid="uid://er0u1ub6hg8r" path="res://scenes/player.tscn" id="3_02v7m"]
+[ext_resource type="Script" uid="uid://domn005n8t733" path="res://scripts/climbableladder.gd" id="4_ccscm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r48jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu5tm"]
+size = Vector2(406, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eh81"]
+size = Vector2(52, 459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq4ul"]
+size = Vector2(120, 20)
+
+[sub_resource type="Animation" id="Animation_vsrvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, 466)]
+}
+
+[sub_resource type="Animation" id="Animation_02v7m"]
+resource_name = "moving platform"
+length = 4.0
+loop_mode = 2
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(442, 470), Vector2(442, 223)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mejfh"]
+_data = {
+&"RESET": SubResource("Animation_vsrvg"),
+&"moving platform": SubResource("Animation_02v7m")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diwod"]
+size = Vector2(43.181816, 1.0542171)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yu5tm"]
+
+[node name="scene_2" type="Node2D" unique_id=1536231746]
+script = ExtResource("1_mejfh")
+
+[node name="background" type="TextureRect" parent="." unique_id=799688156]
+offset_right = 1232.0
+offset_bottom = 689.0
+scale = Vector2(0.9350708, 0.9407157)
+texture = ExtResource("1_xe0r6")
+
+[node name="Player" parent="." unique_id=201504000 groups=["player"] instance=ExtResource("3_02v7m")]
+position = Vector2(360, 84)
+
+[node name="ladderbody" type="Area2D" parent="." unique_id=414544867]
+position = Vector2(251.00002, 283)
+scale = Vector2(2.6399999, 13.28)
+collision_mask = 2
+script = ExtResource("4_ccscm")
+
+[node name="collisionladder" type="CollisionShape2D" parent="ladderbody" unique_id=311725677]
+shape = SubResource("RectangleShape2D_r48jh")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="ground platform" type="StaticBody2D" parent="." unique_id=609853451]
+
+[node name="platform image" type="TextureRect" parent="ground platform" unique_id=760893488]
+offset_left = -52.000004
+offset_top = 457.0
+offset_right = 1180.0
+offset_bottom = 1146.0
+scale = Vector2(0.32929537, 0.06991303)
+texture = ExtResource("1_xe0r6")
+
+[node name="collisionground" type="CollisionShape2D" parent="ground platform" unique_id=460263202]
+position = Vector2(151, 476.5)
+shape = SubResource("RectangleShape2D_yu5tm")
+
+[node name="world boundary" type="StaticBody2D" parent="." unique_id=88114605]
+
+[node name="collisionworld" type="CollisionShape2D" parent="world boundary" unique_id=1257359324]
+position = Vector2(-24, 230.5)
+shape = SubResource("RectangleShape2D_0eh81")
+
+[node name="moving platform" type="AnimatableBody2D" parent="." unique_id=378161669]
+position = Vector2(483, 466)
+scale = Vector2(0.6, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="moving platform" unique_id=1697856332]
+position = Vector2(-6.0000114, -2.6226044e-06)
+scale = Vector2(0.03125, 0.01851855)
+texture = ExtResource("2_vsrvg")
+region_rect = Rect2(0, 0, 2291.521, 400.66907)
+
+[node name="collisionmoving" type="CollisionShape2D" parent="moving platform" unique_id=2116514493]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_uq4ul")
+
+[node name="moving updown" type="AnimationPlayer" parent="moving platform" unique_id=1184594365]
+libraries/ = SubResource("AnimationLibrary_mejfh")
+autoplay = &"moving platform"
+
+[node name="standing platform" type="StaticBody2D" parent="." unique_id=1201692476]
+position = Vector2(341.99997, 127)
+scale = Vector2(5.2, 1)
+
+[node name="standingplatformimage" type="TextureRect" parent="standing platform" unique_id=1240473600]
+offset_left = -9.999993
+offset_top = -8.0
+offset_right = 1600.531
+offset_bottom = 681.0
+scale = Vector2(0.013678229, 0.020184565)
+texture = ExtResource("1_xe0r6")
+
+[node name="collisionstanding" type="CollisionShape2D" parent="standing platform" unique_id=317915475]
+position = Vector2(0.96154785, -1)
+scale = Vector2(0.5076922, 13.28)
+shape = SubResource("RectangleShape2D_diwod")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1876988786]
+position = Vector2(406, 119)
+scale = Vector2(3.52, -11.826706)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=852093729]
+shape = SubResource("SegmentShape2D_yu5tm")
+
+[connection signal="body_entered" from="ladderbody" to="ladderbody" method="_on_body_entered"]
+[connection signal="body_exited" from="ladderbody" to="ladderbody" method="_on_body_exited"]
