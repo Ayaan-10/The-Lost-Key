@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0vqv5kdogen6"
-path="res://.godot/imported/jamegamtitlescreen.png-83a87e45853ab24fb16a8a1fc62057ca.ctex"
+uid="uid://byrpet46swxwd"
+path="res://.godot/imported/jamegamgamebackgroundtitlescreendone.png-2b069a81288654065e2ec74fa5177fe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jamegamtitlescreen.png"
-dest_files=["res://.godot/imported/jamegamtitlescreen.png-83a87e45853ab24fb16a8a1fc62057ca.ctex"]
+source_file="res://assets/jamegamgamebackgroundtitlescreendone.png"
+dest_files=["res://.godot/imported/jamegamgamebackgroundtitlescreendone.png-2b069a81288654065e2ec74fa5177fe0.ctex"]
 
 [params]
 
