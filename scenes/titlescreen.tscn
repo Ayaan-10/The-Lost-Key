@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dlchieyl68tbe"]
+
+[ext_resource type="Script" path="res://scripts/titlescreen.gd" id="1_3jj3l"]
+[ext_resource type="Texture2D" path="res://assets/jamegamgamebackgroundtitlescreendone.png" id="2_3jj3l"]
+[ext_resource type="FontFile" path="res://assets/PatrickHand-Regular.ttf" id="3_t7v6v"]
+[ext_resource type="FontFile" path="res://assets/Fredoka-VariableFont_wdth,wght.ttf" id="4_vhbaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcbn3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhbaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpvs4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uq4ul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7hj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8or72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diwod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ejck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w77yj"]
+
+[node name="titlescreen" type="Node2D" unique_id=1957469048]
+script = ExtResource("1_3jj3l")
+
+[node name="background" type="TextureRect" parent="." unique_id=2039981470]
+offset_right = 1680.0
+offset_bottom = 1050.0
+scale = Vector2(0.68548536, 0.6169179)
+texture = ExtResource("2_3jj3l")
+
+[node name="game title" type="Label" parent="." unique_id=1031355850]
+offset_left = 299.0
+offset_top = 51.0
+offset_right = 1338.4945
+offset_bottom = 202.55246
+scale = Vector2(0.51467323, 0.51467323)
+theme_override_colors/font_color = Color(0.95686275, 0.87058824, 0.7921569, 1)
+theme_override_colors/font_shadow_color = Color(0.40392157, 0.40392157, 0.40392157, 0.5803922)
+theme_override_colors/font_outline_color = Color(0.32156864, 0.30588236, 0.29411766, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("4_vhbaf")
+theme_override_font_sizes/font_size = 100
+text = "LostKeys"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="heading title" type="Label" parent="." unique_id=1683455348]
+offset_left = 344.0
+offset_top = 139.00002
+offset_right = 1255.557
+offset_bottom = 249.74992
+scale = Vector2(0.51467323, 0.51467323)
+theme_override_colors/font_color = Color(0.61786366, 0.4351767, 0.32152402, 1)
+theme_override_colors/font_shadow_color = Color(0.4045111, 0.40451118, 0.40451103, 0.5803922)
+theme_override_colors/font_outline_color = Color(0.24477637, 0.24477643, 0.24477634, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_vhbaf")
+theme_override_font_sizes/font_size = 70
+text = "A little guy in a little world."
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2052701213]
+offset_left = 390.0
+offset_top = 224.99998
+offset_right = 1090.0
+offset_bottom = 871.2386
+scale = Vector2(0.54787165, 0.37137985)
+theme_override_constants/separation = 60
+
+[node name="start game button" type="Button" parent="VBoxContainer" unique_id=525885010]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83696187, 0.7165296, 0.67041457, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.72156864, 0.36078432, 1)
+theme_override_colors/font_hover_color = Color(0.53333336, 0.38039216, 0.31764707, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hcbn3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhbaf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rpvs4")
+text = "Start Game.."
+
+[node name="just a button" type="Button" parent="VBoxContainer" unique_id=1912378623]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69835496, 0.54750556, 0.47930795, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.72156864, 0.36078432, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.35686275, 0.22745098, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uq4ul")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v7hj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8or72")
+text = "Just a button."
+
+[node name="quit game button" type="Button" parent="VBoxContainer" unique_id=1184895865]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53165126, 0.37916082, 0.31933555, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.72156864, 0.36078432, 1)
+theme_override_colors/font_hover_color = Color(0.8352941, 0.7176471, 0.67058825, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_t7v6v")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxEmpty_diwod")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6ejck")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w77yj")
+text = "Quit Game."
+
+[connection signal="pressed" from="VBoxContainer/quit game button" to="." method="_on_quit_game_button_pressed"]
