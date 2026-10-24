@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfxak2n87dv1h"]
+
+[ext_resource type="Texture2D" uid="uid://cqg0m2k2o7f8u" path="res://assets/character.png" id="1_mrcq6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yu5tm"]
+
+[node name="cockroach enemy" type="CharacterBody2D" unique_id=1502786111]
+
+[node name="cockroach" type="Sprite2D" parent="." unique_id=1463988728]
+position = Vector2(-0.82412267, -1.0000007)
+scale = Vector2(0.026375124, 0.026114864)
+texture = ExtResource("1_mrcq6")
+
+[node name="enemycollision" type="CollisionShape2D" parent="." unique_id=614270314]
+scale = Vector2(0.69233453, 1.047129)
+shape = SubResource("CircleShape2D_yu5tm")
+debug_color = Color(0.83195734, 0, 0.14110792, 0.41960785)

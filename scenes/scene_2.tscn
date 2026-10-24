@@ -3,13 +3,16 @@
 [ext_resource type="Script" uid="uid://bgl2yry7tl45o" path="res://scripts/scene_2.gd" id="1_mejfh"]
 [ext_resource type="Texture2D" uid="uid://cmou41jw4lk2h" path="res://assets/tempscenegamejam2.png" id="1_xe0r6"]
 [ext_resource type="Texture2D" uid="uid://cq888aqu6jlwc" path="res://scenes/Untitled_design_6.png" id="2_vsrvg"]
+[ext_resource type="PackedScene" uid="uid://dj6be7nbelsh5" path="res://scenes/killzonescene2.tscn" id="2_yun4j"]
 [ext_resource type="PackedScene" uid="uid://er0u1ub6hg8r" path="res://scenes/player.tscn" id="3_02v7m"]
 [ext_resource type="Script" uid="uid://domn005n8t733" path="res://scripts/climbableladder.gd" id="4_ccscm"]
+[ext_resource type="Texture2D" uid="uid://bfdaxj5xepfcd" path="res://assets/Scene1Bg.png" id="7_qo03w"]
+[ext_resource type="Texture2D" uid="uid://8ehe5ajcabtl" path="res://assets/jamegamgamebackgroundtitlescreendone.png" id="8_is556"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r48jh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu5tm"]
-size = Vector2(406, 33)
+size = Vector2(209, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eh81"]
 size = Vector2(52, 459)
@@ -61,8 +64,18 @@ size = Vector2(43.181816, 1.0542171)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yu5tm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo03w"]
+size = Vector2(215, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wgwx"]
+size = Vector2(27.977333, 20)
+
 [node name="scene_2" type="Node2D" unique_id=1536231746]
 script = ExtResource("1_mejfh")
+
+[node name="killzone" parent="." unique_id=615844762 instance=ExtResource("2_yun4j")]
+position = Vector2(90, 573)
+scale = Vector2(0.56, 1)
 
 [node name="background" type="TextureRect" parent="." unique_id=799688156]
 offset_right = 1232.0
@@ -86,15 +99,15 @@ debug_color = Color(1, 1, 1, 0.41960785)
 [node name="ground platform" type="StaticBody2D" parent="." unique_id=609853451]
 
 [node name="platform image" type="TextureRect" parent="ground platform" unique_id=760893488]
-offset_left = -52.000004
-offset_top = 457.0
-offset_right = 1180.0
-offset_bottom = 1146.0
-scale = Vector2(0.32929537, 0.06991303)
+offset_left = 145.0
+offset_top = 460.0
+offset_right = 1377.0
+offset_bottom = 1149.0
+scale = Vector2(0.16940987, 0.03596758)
 texture = ExtResource("1_xe0r6")
 
 [node name="collisionground" type="CollisionShape2D" parent="ground platform" unique_id=460263202]
-position = Vector2(151, 476.5)
+position = Vector2(249.5, 476.5)
 shape = SubResource("RectangleShape2D_yu5tm")
 
 [node name="world boundary" type="StaticBody2D" parent="." unique_id=88114605]
@@ -138,12 +151,44 @@ position = Vector2(0.96154785, -1)
 scale = Vector2(0.5076922, 13.28)
 shape = SubResource("RectangleShape2D_diwod")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1876988786]
+[node name="sideboundary platform" type="StaticBody2D" parent="." unique_id=1876988786]
 position = Vector2(406, 119)
 scale = Vector2(3.52, -11.826706)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=852093729]
+[node name="side collision" type="CollisionShape2D" parent="sideboundary platform" unique_id=852093729]
 shape = SubResource("SegmentShape2D_yu5tm")
+
+[node name="ground platform2" type="StaticBody2D" parent="." unique_id=592819160]
+position = Vector2(694, 421)
+
+[node name="ground platform2 texture" type="TextureRect" parent="ground platform2" unique_id=1270878632]
+offset_left = -95.0
+offset_top = -11.0
+offset_right = 1696.7397
+offset_bottom = 997.3335
+scale = Vector2(0.11999512, 0.120000005)
+texture = ExtResource("7_qo03w")
+
+[node name="ground platform2 collision" type="CollisionShape2D" parent="ground platform2" unique_id=614143868]
+position = Vector2(12.5, 49.5)
+shape = SubResource("RectangleShape2D_qo03w")
+
+[node name="ground platform3" type="StaticBody2D" parent="." unique_id=1697353476]
+position = Vector2(1106, 426)
+scale = Vector2(4.1104774, 1.509093)
+
+[node name="TextureRect" type="TextureRect" parent="ground platform3" unique_id=803054702]
+offset_left = -16.78638
+offset_top = -10.602394
+offset_right = 1663.2136
+offset_bottom = 1039.3976
+scale = Vector2(0.019994834, 0.019994834)
+texture = ExtResource("8_is556")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground platform3" unique_id=880234781]
+position = Vector2(-2.7977905, 0)
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_7wgwx")
 
 [connection signal="body_entered" from="ladderbody" to="ladderbody" method="_on_body_entered"]
 [connection signal="body_exited" from="ladderbody" to="ladderbody" method="_on_body_exited"]
