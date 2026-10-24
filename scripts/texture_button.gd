@@ -10,12 +10,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-@onready var label: Label = $"../Label"
 @onready var player: CharacterBody2D = $"../../Player"
 @onready var become_smol: AnimationPlayer = $"../../Player/BecomeSmol"
 @onready var texture_button: TextureButton = $"."
+@onready var dialouge_2: Label = $"../../Dialouges/Dialouge2"
+@onready var guide_1: Label = $"../../Guide/Guide1"
+
 
 func _on_pressed() -> void:
-	label.visible = true
+	dialouge_2.visible = true
+	guide_1.visible = false
 	become_smol.play("sizesmall")
 	texture_button.queue_free()
