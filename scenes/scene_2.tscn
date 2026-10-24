@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://fon5s06a7gp6"]
 
 [ext_resource type="Script" uid="uid://bgl2yry7tl45o" path="res://scripts/scene_2.gd" id="1_mejfh"]
-[ext_resource type="Texture2D" uid="uid://cmou41jw4lk2h" path="res://assets/tempscenegamejam2.png" id="1_xe0r6"]
-[ext_resource type="Texture2D" uid="uid://cq888aqu6jlwc" path="res://scenes/Untitled_design_6.png" id="2_vsrvg"]
 [ext_resource type="PackedScene" uid="uid://dj6be7nbelsh5" path="res://scenes/killzonescene2.tscn" id="2_yun4j"]
 [ext_resource type="PackedScene" uid="uid://er0u1ub6hg8r" path="res://scenes/player.tscn" id="3_02v7m"]
 [ext_resource type="Texture2D" uid="uid://d1yywqxlr231x" path="res://assets/sewerbg.png" id="3_ul8a6"]
 [ext_resource type="Script" uid="uid://domn005n8t733" path="res://scripts/climbableladder.gd" id="4_ccscm"]
+[ext_resource type="Texture2D" uid="uid://ctlymt8xlfuww" path="res://assets/sewersceneplatformbigrenew-removebg-preview.png" id="6_is556"]
+[ext_resource type="Texture2D" uid="uid://cmes3ahhcvdgl" path="res://assets/sewersceneplatformsmall-removebg-preview.png" id="7_is556"]
+[ext_resource type="Texture2D" uid="uid://cqju8xuainso3" path="res://assets/pipe_body_to_opening_v2.png" id="8_is556"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r48jh"]
 size = Vector2(20, 18.358433)
@@ -102,12 +103,12 @@ debug_color = Color(1, 1, 1, 0.41960785)
 [node name="ground platform" type="StaticBody2D" parent="." unique_id=609853451]
 
 [node name="platform image" type="TextureRect" parent="ground platform" unique_id=760893488]
-offset_left = 145.0
-offset_top = 460.0
-offset_right = 1377.0
-offset_bottom = 1149.0
-scale = Vector2(0.16940987, 0.03596758)
-texture = ExtResource("1_xe0r6")
+offset_left = 55.0
+offset_top = 411.0
+offset_right = 1399.3005
+offset_bottom = 3459.6855
+scale = Vector2(0.28427106, 0.060353875)
+texture = ExtResource("6_is556")
 
 [node name="collisionground" type="CollisionShape2D" parent="ground platform" unique_id=460263202]
 position = Vector2(249.5, 476.5)
@@ -124,9 +125,9 @@ position = Vector2(483, 466)
 scale = Vector2(0.6, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="moving platform" unique_id=1697856332]
-position = Vector2(-6.0000114, -2.6226044e-06)
-scale = Vector2(0.03125, 0.01851855)
-texture = ExtResource("2_vsrvg")
+position = Vector2(1.6666107, 8.999987)
+scale = Vector2(0.585443, 0.2531646)
+texture = ExtResource("7_is556")
 region_rect = Rect2(0, 0, 2291.521, 400.66907)
 
 [node name="collisionmoving" type="CollisionShape2D" parent="moving platform" unique_id=2116514493]
@@ -168,6 +169,14 @@ scale = Vector2(4.1104774, 1.509093)
 position = Vector2(-5.1698303, 1.0240784)
 scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_7wgwx")
+
+[node name="sewerexit texture" type="TextureRect" parent="." unique_id=852491578]
+offset_left = 1041.0
+offset_top = 220.99998
+offset_right = 2112.3936
+offset_bottom = 3184.22
+scale = Vector2(0.10360352, 0.10360352)
+texture = ExtResource("8_is556")
 
 [connection signal="body_entered" from="ladderbody" to="ladderbody" method="_on_body_entered"]
 [connection signal="body_exited" from="ladderbody" to="ladderbody" method="_on_body_exited"]
