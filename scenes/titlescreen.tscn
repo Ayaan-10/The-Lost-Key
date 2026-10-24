@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://dlchieyl68tbe"]
 
-[ext_resource type="Script" path="res://scripts/titlescreen.gd" id="1_3jj3l"]
-[ext_resource type="Texture2D" path="res://assets/jamegamgamebackgroundtitlescreendone.png" id="2_3jj3l"]
-[ext_resource type="FontFile" path="res://assets/PatrickHand-Regular.ttf" id="3_t7v6v"]
-[ext_resource type="FontFile" path="res://assets/Fredoka-VariableFont_wdth,wght.ttf" id="4_vhbaf"]
+[ext_resource type="Texture2D" uid="uid://8ehe5ajcabtl" path="res://assets/jamegamgamebackgroundtitlescreendone.png" id="2_3jj3l"]
+[ext_resource type="FontFile" uid="uid://cvq5i0wiq3ve6" path="res://assets/PatrickHand-Regular.ttf" id="3_t7v6v"]
+[ext_resource type="FontFile" uid="uid://dhmtnnsorigok" path="res://assets/Fredoka-VariableFont_wdth,wght.ttf" id="4_vhbaf"]
+
+[sub_resource type="GDScript" id="GDScript_dj1ar"]
+script/source = "extends Node2D
+
+
+
+func _on_quit_game_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_start_game_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/scene_1.tscn\")
+"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcbn3"]
 
@@ -24,7 +36,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w77yj"]
 
 [node name="titlescreen" type="Node2D" unique_id=1957469048]
-script = ExtResource("1_3jj3l")
+script = SubResource("GDScript_dj1ar")
 
 [node name="background" type="TextureRect" parent="." unique_id=2039981470]
 offset_right = 1680.0
@@ -87,7 +99,7 @@ theme_override_font_sizes/font_size = 108
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hcbn3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhbaf")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rpvs4")
-text = "Start Game.."
+text = "Start Game."
 
 [node name="just a button" type="Button" parent="VBoxContainer" unique_id=1912378623]
 layout_mode = 2
@@ -115,4 +127,5 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6ejck")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_w77yj")
 text = "Quit Game."
 
+[connection signal="pressed" from="VBoxContainer/start game button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit game button" to="." method="_on_quit_game_button_pressed"]
