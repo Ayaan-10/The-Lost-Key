@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cq888aqu6jlwc" path="res://scenes/Untitled_design_6.png" id="2_vsrvg"]
 [ext_resource type="PackedScene" uid="uid://dj6be7nbelsh5" path="res://scenes/killzonescene2.tscn" id="2_yun4j"]
 [ext_resource type="PackedScene" uid="uid://er0u1ub6hg8r" path="res://scenes/player.tscn" id="3_02v7m"]
+[ext_resource type="Texture2D" uid="uid://d1yywqxlr231x" path="res://assets/sewerbg.png" id="3_ul8a6"]
 [ext_resource type="Script" uid="uid://domn005n8t733" path="res://scripts/climbableladder.gd" id="4_ccscm"]
-[ext_resource type="Texture2D" uid="uid://bfdaxj5xepfcd" path="res://assets/Scene1Bg.png" id="7_qo03w"]
-[ext_resource type="Texture2D" uid="uid://8ehe5ajcabtl" path="res://assets/jamegamgamebackgroundtitlescreendone.png" id="8_is556"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r48jh"]
+size = Vector2(20, 18.358433)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu5tm"]
 size = Vector2(209, 33)
@@ -63,12 +63,14 @@ _data = {
 size = Vector2(43.181816, 1.0542171)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yu5tm"]
+a = Vector2(7.6293945e-06, -1.0992079)
+b = Vector2(0.85227966, 11.668507)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo03w"]
-size = Vector2(215, 121)
+size = Vector2(216.5, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wgwx"]
-size = Vector2(27.977333, 20)
+size = Vector2(32.478016, 36.50595)
 
 [node name="scene_2" type="Node2D" unique_id=1536231746]
 script = ExtResource("1_mejfh")
@@ -78,21 +80,22 @@ position = Vector2(90, 573)
 scale = Vector2(0.56, 1)
 
 [node name="background" type="TextureRect" parent="." unique_id=799688156]
-offset_right = 1232.0
-offset_bottom = 689.0
-scale = Vector2(0.9350708, 0.9407157)
-texture = ExtResource("1_xe0r6")
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.30012366, 0.29958132)
+texture = ExtResource("3_ul8a6")
 
 [node name="Player" parent="." unique_id=201504000 groups=["player"] instance=ExtResource("3_02v7m")]
 position = Vector2(360, 84)
 
 [node name="ladderbody" type="Area2D" parent="." unique_id=414544867]
-position = Vector2(251.00002, 283)
-scale = Vector2(2.6399999, 13.28)
+position = Vector2(269, 290)
+scale = Vector2(2.9199998, 13.28)
 collision_mask = 2
 script = ExtResource("4_ccscm")
 
 [node name="collisionladder" type="CollisionShape2D" parent="ladderbody" unique_id=311725677]
+position = Vector2(0, -0.8207836)
 shape = SubResource("RectangleShape2D_r48jh")
 debug_color = Color(1, 1, 1, 0.41960785)
 
@@ -135,16 +138,8 @@ libraries/ = SubResource("AnimationLibrary_mejfh")
 autoplay = &"moving platform"
 
 [node name="standing platform" type="StaticBody2D" parent="." unique_id=1201692476]
-position = Vector2(341.99997, 127)
+position = Vector2(353, 140)
 scale = Vector2(5.2, 1)
-
-[node name="standingplatformimage" type="TextureRect" parent="standing platform" unique_id=1240473600]
-offset_left = -9.999993
-offset_top = -8.0
-offset_right = 1600.531
-offset_bottom = 681.0
-scale = Vector2(0.013678229, 0.020184565)
-texture = ExtResource("1_xe0r6")
 
 [node name="collisionstanding" type="CollisionShape2D" parent="standing platform" unique_id=317915475]
 position = Vector2(0.96154785, -1)
@@ -152,7 +147,7 @@ scale = Vector2(0.5076922, 13.28)
 shape = SubResource("RectangleShape2D_diwod")
 
 [node name="sideboundary platform" type="StaticBody2D" parent="." unique_id=1876988786]
-position = Vector2(406, 119)
+position = Vector2(420.99997, 134)
 scale = Vector2(3.52, -11.826706)
 
 [node name="side collision" type="CollisionShape2D" parent="sideboundary platform" unique_id=852093729]
@@ -161,33 +156,17 @@ shape = SubResource("SegmentShape2D_yu5tm")
 [node name="ground platform2" type="StaticBody2D" parent="." unique_id=592819160]
 position = Vector2(694, 421)
 
-[node name="ground platform2 texture" type="TextureRect" parent="ground platform2" unique_id=1270878632]
-offset_left = -95.0
-offset_top = -11.0
-offset_right = 1696.7397
-offset_bottom = 997.3335
-scale = Vector2(0.11999512, 0.120000005)
-texture = ExtResource("7_qo03w")
-
 [node name="ground platform2 collision" type="CollisionShape2D" parent="ground platform2" unique_id=614143868]
-position = Vector2(12.5, 49.5)
+position = Vector2(37.75, 83)
 shape = SubResource("RectangleShape2D_qo03w")
 
 [node name="ground platform3" type="StaticBody2D" parent="." unique_id=1697353476]
 position = Vector2(1106, 426)
 scale = Vector2(4.1104774, 1.509093)
 
-[node name="TextureRect" type="TextureRect" parent="ground platform3" unique_id=803054702]
-offset_left = -16.78638
-offset_top = -10.602394
-offset_right = 1663.2136
-offset_bottom = 1039.3976
-scale = Vector2(0.019994834, 0.019994834)
-texture = ExtResource("8_is556")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground platform3" unique_id=880234781]
-position = Vector2(-2.7977905, 0)
-scale = Vector2(1, 0.9999999)
+[node name="ground platform3 collision" type="CollisionShape2D" parent="ground platform3" unique_id=880234781]
+position = Vector2(-5.1698303, 1.0240784)
+scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_7wgwx")
 
 [connection signal="body_entered" from="ladderbody" to="ladderbody" method="_on_body_entered"]
