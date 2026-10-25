@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
 [ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
 [ext_resource type="Texture2D" uid="uid://d4aol7esgxdqh" path="res://assets/obby/tile.png" id="3_7w1x0"]
+[ext_resource type="Script" uid="uid://be2wvjw10up1c" path="res://scenes/player_sewer.gd" id="4_5bl23"]
 [ext_resource type="Texture2D" uid="uid://dnljnvj66jevh" path="res://assets/backgrounds/sewerpipe.png" id="4_c03w2"]
 [ext_resource type="Texture2D" uid="uid://ctua4rtxfxttf" path="res://assets/obby/tiles3.png" id="5_o2fsv"]
 [ext_resource type="Script" uid="uid://beou5o8qbt6pv" path="res://scripts/ladder.gd" id="5_tqi0o"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://y7wfpf3544ix" path="res://assets/obby/barrier.png" id="14_lt782"]
 [ext_resource type="Texture2D" uid="uid://d2h08ssgw5lno" path="res://assets/obby/rope.png" id="15_w8s63"]
 [ext_resource type="Script" uid="uid://j7x0uhbxb7p6" path="res://scripts/tunnel_entrance.gd" id="16_f3kck"]
+[ext_resource type="Texture2D" uid="uid://b5amvd07nm8fe" path="res://assets/instructions.png" id="18_bowhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2fsv"]
 size = Vector2(20.294127, 53.128143)
@@ -237,6 +239,7 @@ shape = SubResource("RectangleShape2D_o2fsv")
 z_index = 1
 position = Vector2(406, 60.000008)
 scale = Vector2(0.12, 0.12)
+script = ExtResource("4_5bl23")
 
 [node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1862367338]
 position = Vector2(0.000102996826, -5.340576e-05)
@@ -486,6 +489,14 @@ next_scene = "uid://btxjbosxblg35"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TunnelEntrance" unique_id=846542535]
 shape = SubResource("RectangleShape2D_cevfm")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=200052981]
+offset_left = 300.0
+offset_top = 114.0
+offset_right = 2220.0
+offset_bottom = 1194.0
+scale = Vector2(0.21661302, 0.21661302)
+texture = ExtResource("18_bowhh")
 
 [connection signal="body_entered" from="acid" to="Player2" method="_on_acid_body_entered"]
 [connection signal="body_entered" from="ladder" to="Player2" method="_on_ladder_body_entered"]
