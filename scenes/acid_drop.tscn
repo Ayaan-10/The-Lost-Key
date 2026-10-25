@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bn4yc0hb0xwpc"]
+
+[ext_resource type="Script" uid="uid://0xep4rvr1xut" path="res://acid_drop.gd" id="1_qoxra"]
+[ext_resource type="Texture2D" uid="uid://b7ff6d130iy3m" path="res://assets/props/acid.png" id="2_spltc"]
+
+[node name="AcidDrop" type="Node2D" unique_id=1590960375]
+script = ExtResource("1_qoxra")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280468575]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_spltc")
+region_enabled = true
+region_rect = Rect2(625, 380, 288, 289)

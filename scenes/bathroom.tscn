@@ -25,6 +25,13 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_238uk"]
+bg_color = Color(0.5286663, 0, 0.11162045, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="Bathroom" type="Node2D" unique_id=177836336]
 script = ExtResource("1_3ouov")
 
@@ -98,3 +105,38 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_nolv0")
 text = "It looks like the rat stole your key! RAH (Click it or press E near it to get it)"
 horizontal_alignment = 1
+
+[node name="Guide" type="Label" parent="UI" unique_id=1607131310]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.5
+offset_top = -65.0
+offset_right = 300.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.023529412, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_nolv0")
+text = "R (Restart), E/LMB (Interact), J/LMB (Attack), "
+horizontal_alignment = 1
+
+[node name="PlayerHealth" type="Label" parent="UI" unique_id=832626585]
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 65.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 24
+
+[node name="BossHealth" type="ProgressBar" parent="UI" unique_id=1741189752]
+offset_left = 787.0
+offset_top = 78.0
+offset_right = 1267.0
+offset_bottom = 105.0
+theme_override_styles/background = SubResource("StyleBoxFlat_238uk")
+max_value = 12.0
+value = 12.0
+show_percentage = false
