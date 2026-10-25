@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1g8pm6w25da5"]
+
+[ext_resource type="Script" uid="uid://dqnbep438h2gs" path="res://shockwave.gd" id="1_238uk"]
+[ext_resource type="Texture2D" uid="uid://dsmcnjxnb5cpt" path="res://assets/props/shockwave.png" id="1_fafld"]
+
+[node name="Shockwave" type="Node2D" unique_id=1940993092]
+script = ExtResource("1_238uk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1384723228]
+texture = ExtResource("1_fafld")
+region_enabled = true
+region_rect = Rect2(210, 99, 164, 163)

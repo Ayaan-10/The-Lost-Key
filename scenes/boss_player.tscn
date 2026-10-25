@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://rdom6kbq0d02"]
+
+[ext_resource type="Script" uid="uid://ctk2vlmrk13cx" path="res://scripts/boss_player.gd" id="1_5i7dm"]
+[ext_resource type="Texture2D" uid="uid://cgvmrdvoha1yx" path="res://assets/characters/bossplayer/idle_01.png" id="2_5i7dm"]
+[ext_resource type="Texture2D" uid="uid://4lmkbgd2m7lo" path="res://assets/characters/bossplayer/death.png" id="2_jxmgj"]
+[ext_resource type="Texture2D" uid="uid://bbf3irm0rb082" path="res://assets/characters/bossplayer/jump_fall.png" id="3_qj8bj"]
+[ext_resource type="Texture2D" uid="uid://c8qu1alggypyw" path="res://assets/characters/bossplayer/idle_02.png" id="3_uyb3b"]
+[ext_resource type="Texture2D" uid="uid://cu6uodlxh51mv" path="res://assets/characters/bossplayer/hurt.png" id="4_lfjel"]
+[ext_resource type="Texture2D" uid="uid://b4omaymaa862t" path="res://assets/characters/bossplayer/idle_03.png" id="4_pp6mn"]
+[ext_resource type="Texture2D" uid="uid://cnwcesmoiud51" path="res://assets/characters/bossplayer/jump_up.png" id="8_y1axx"]
+[ext_resource type="Texture2D" uid="uid://bvw0b7xiad3vg" path="res://assets/characters/bossplayer/jump_start.png" id="9_u6ee6"]
+[ext_resource type="Texture2D" uid="uid://s1oh180tqy2m" path="res://assets/characters/bossplayer/jump_land.png" id="10_n25cv"]
+[ext_resource type="Texture2D" uid="uid://jf4a1hg6wr8a" path="res://assets/characters/bossplayer/run_01.png" id="11_qhj6q"]
+[ext_resource type="Texture2D" uid="uid://cg7fv8qr7ssx5" path="res://assets/characters/bossplayer/run_02.png" id="12_av3ix"]
+[ext_resource type="Texture2D" uid="uid://cp2gdflf446qp" path="res://assets/characters/bossplayer/throw.png" id="13_mfpb0"]
+[ext_resource type="PackedScene" uid="uid://b44l1v2fs7aja" path="res://scenes/wing.tscn" id="14_qj8bj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h83ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jxmgj")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qj8bj")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lfjel")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5i7dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uyb3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5i7dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pp6mn")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_y1axx")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_u6ee6")
+}],
+"loop": 0,
+"name": &"jump_start",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_n25cv")
+}],
+"loop": 0,
+"name": &"land",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qhj6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_av3ix")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_mfpb0")
+}],
+"loop": 0,
+"name": &"throw",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h83ex"]
+radius = 17.0
+height = 82.0
+
+[node name="BossPlayer" type="CharacterBody2D" unique_id=1584332084]
+collision_layer = 2
+script = ExtResource("1_5i7dm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=853566768]
+position = Vector2(0, -89.44)
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_h83ex")
+animation = &"throw"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044833152]
+position = Vector2(0, -41)
+shape = SubResource("CapsuleShape2D_h83ex")
+
+[node name="Wing" parent="." unique_id=780789072 instance=ExtResource("14_qj8bj")]

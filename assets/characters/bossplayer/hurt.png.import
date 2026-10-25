@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1shqai81mnp"
-path="res://.godot/imported/key.png-a97df9ba773df86f934812b8b28ef996.ctex"
+uid="uid://cu6uodlxh51mv"
+path="res://.godot/imported/hurt.png-1f674b5c495c461ea6eb87f2a13e575a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/key.png"
-dest_files=["res://.godot/imported/key.png-a97df9ba773df86f934812b8b28ef996.ctex"]
+source_file="res://assets/characters/bossplayer/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-1f674b5c495c461ea6eb87f2a13e575a.ctex"]
 
 [params]
 
