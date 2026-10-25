@@ -10,6 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://dbrttcgdqg5f6" path="res://scene_transitions.tscn" id="8_g2j0d"]
 [ext_resource type="Script" uid="uid://cel7jaadul8e3" path="res://teleporter_button.gd" id="9_p837x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eh81"]
+bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 14
+border_color = Color(0.33288068, 0.33288074, 0.33288044, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h83ex"]
 bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
 border_width_left = 4
@@ -192,6 +200,21 @@ offset_right = 3841.0
 offset_bottom = 1080.0
 scale = Vector2(0.66620237, 0.66620237)
 texture = ExtResource("1_t6bmd")
+
+[node name="Label" type="Label" parent="GameManager/Background" unique_id=580412175]
+layout_mode = 0
+offset_left = 252.17561
+offset_top = 267.18604
+offset_right = 1063.1757
+offset_bottom = 714.18604
+scale = Vector2(0.63676363, 0.3932476)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p837x")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxFlat_0eh81")
+text = "Okay...
+A totally normal day.
+Let's go get milk."
 
 [node name="playerkey" type="Label" parent="GameManager/Background" unique_id=1275277168]
 visible = false
