@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cqjccrn8j085h"]
+
+[ext_resource type="AudioStream" uid="uid://baf2t508sie8x" path="res://assets/LostKey audio.mp3" id="1_6n3bj"]
+
+[node name="audio" type="Node2D" unique_id=1643652575]
+
+[node name="Node" type="Node" parent="." unique_id=1125756377]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node" unique_id=190151648]
+stream = ExtResource("1_6n3bj")
+autoplay = true

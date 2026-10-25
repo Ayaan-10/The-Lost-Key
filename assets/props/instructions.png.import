@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0v85sahnnjtb"
-path="res://.godot/imported/Wiseman.png-5cbafb0cc90d567612f1536ea3be57b1.ctex"
+uid="uid://b5amvd07nm8fe"
+path="res://.godot/imported/instructions.png-178b4351dda0a54007104c7ad1cda1e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wiseman.png"
-dest_files=["res://.godot/imported/Wiseman.png-5cbafb0cc90d567612f1536ea3be57b1.ctex"]
+source_file="res://assets/props/instructions.png"
+dest_files=["res://.godot/imported/instructions.png-178b4351dda0a54007104c7ad1cda1e2.ctex"]
 
 [params]
 

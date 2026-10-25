@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cvq5i0wiq3ve6"
-path="res://.godot/imported/PatrickHand-Regular.ttf-c265d6fdb9bd61887e2c46d10d737af3.fontdata"
+uid="uid://dhmtnnsorigok"
+path="res://.godot/imported/Fredoka-VariableFont_wdth,wght.ttf-834a28e383aed53260eaf917bde91e68.fontdata"
 
 [deps]
 
-source_file="res://assets/PatrickHand-Regular.ttf"
-dest_files=["res://.godot/imported/PatrickHand-Regular.ttf-c265d6fdb9bd61887e2c46d10d737af3.fontdata"]
+source_file="res://assets/fonts/Fredoka-VariableFont_wdth,wght.ttf"
+dest_files=["res://.godot/imported/Fredoka-VariableFont_wdth,wght.ttf-834a28e383aed53260eaf917bde91e68.fontdata"]
 
 [params]
 

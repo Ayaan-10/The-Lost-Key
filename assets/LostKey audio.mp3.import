@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baf2t508sie8x"
+path="res://.godot/imported/LostKey audio.mp3-a320b2ade7c85e4e849b22da33947176.mp3str"
+
+[deps]
+
+source_file="res://assets/LostKey audio.mp3"
+dest_files=["res://.godot/imported/LostKey audio.mp3-a320b2ade7c85e4e849b22da33947176.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
