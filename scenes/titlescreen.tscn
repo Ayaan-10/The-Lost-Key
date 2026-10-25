@@ -41,7 +41,7 @@ script = SubResource("GDScript_dj1ar")
 [node name="background" type="TextureRect" parent="." unique_id=2039981470]
 offset_right = 1680.0
 offset_bottom = 1050.0
-scale = Vector2(0.68548536, 0.6169179)
+scale = Vector2(0.76169896, 0.6855081)
 texture = ExtResource("2_3jj3l")
 
 [node name="game title" type="Label" parent="." unique_id=1031355850]

@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 @onready var tripanim: AnimationPlayer = $tripanim
 @onready var area_2d: Area2D = $"../Background/Area2D"
-@onready var dialouge_1: Label = $"../Background/Dialouge1"
+@onready var dialouge_1: Label = $"../Background/playerkey"
 @onready var key: TextureRect = $"../Background/Key"
 @onready var guide_1: Label = $"../Background/Guide1"
 
