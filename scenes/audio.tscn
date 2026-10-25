@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqjccrn8j085h"]
 
-[ext_resource type="AudioStream" uid="uid://baf2t508sie8x" path="res://assets/LostKey audio.mp3" id="1_6n3bj"]
+[ext_resource type="AudioStream" uid="uid://67t08wfi3cmc" path="res://assets/LostKey Bg.mp3" id="1_6n3bj"]
 
 [node name="audio" type="Node2D" unique_id=1643652575]
 

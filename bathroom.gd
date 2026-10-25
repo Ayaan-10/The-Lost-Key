@@ -37,7 +37,13 @@ func _process(_delta):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("retry"):
-		get_tree().reload_current_scene()
+		if won:
+			GameState.reset_run()
+			get_tree().change_scene_to_file(
+				"res://scenes/scene_1.tscn"
+			)
+		else:
+			get_tree().reload_current_scene()
 		return
 
 	if player.dead or won:
