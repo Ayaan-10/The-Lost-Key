@@ -456,10 +456,13 @@ shape = SubResource("RectangleShape2D_4dbh0")
 libraries/ = SubResource("AnimationLibrary_5bl23")
 
 [node name="gate" type="StaticBody2D" parent="." unique_id=221796209]
+z_index = 6
 position = Vector2(1020.0001, 337)
 scale = Vector2(0.23589727, 0.23589727)
 
 [node name="Sprite2D" type="Sprite2D" parent="gate" unique_id=701957954]
+position = Vector2(-12.717919, 0)
+scale = Vector2(0.33021507, 0.69300085)
 texture = ExtResource("14_lt782")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate" unique_id=570581311]
