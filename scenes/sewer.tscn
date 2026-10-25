@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
 [ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
 [ext_resource type="Texture2D" uid="uid://d4aol7esgxdqh" path="res://assets/obby/tile.png" id="3_7w1x0"]
+[ext_resource type="PackedScene" uid="uid://b44l1v2fs7aja" path="res://scenes/wing.tscn" id="4_5bl23"]
 [ext_resource type="Texture2D" uid="uid://dnljnvj66jevh" path="res://assets/backgrounds/sewerpipe.png" id="4_c03w2"]
 [ext_resource type="Texture2D" uid="uid://ctua4rtxfxttf" path="res://assets/obby/tiles3.png" id="5_o2fsv"]
 [ext_resource type="Script" uid="uid://beou5o8qbt6pv" path="res://scripts/ladder.gd" id="5_tqi0o"]
@@ -16,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://y7wfpf3544ix" path="res://assets/obby/barrier.png" id="14_lt782"]
 [ext_resource type="Texture2D" uid="uid://d2h08ssgw5lno" path="res://assets/obby/rope.png" id="15_w8s63"]
 [ext_resource type="Script" uid="uid://j7x0uhbxb7p6" path="res://scripts/tunnel_entrance.gd" id="16_f3kck"]
-[ext_resource type="Texture2D" uid="uid://b5amvd07nm8fe" path="res://assets/instructions.png" id="18_bowhh"]
+[ext_resource type="Texture2D" uid="uid://b5amvd07nm8fe" path="res://assets/props/instructions.png" id="18_bowhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2fsv"]
 size = Vector2(20.294127, 53.128143)
@@ -208,6 +209,8 @@ size = Vector2(20, 746.0873)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cevfm"]
 
+[sub_resource type="SystemFont" id="SystemFont_8ek7f"]
+
 [node name="Node2D" type="Node2D" unique_id=1423393321]
 
 [node name="sewer-exit" type="Sprite2D" parent="." unique_id=407231315]
@@ -238,6 +241,7 @@ shape = SubResource("RectangleShape2D_o2fsv")
 z_index = 1
 position = Vector2(406, 60.000008)
 scale = Vector2(0.12, 0.12)
+wing_scene = ExtResource("4_5bl23")
 
 [node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1862367338]
 position = Vector2(0.000102996826, -5.340576e-05)
@@ -495,6 +499,17 @@ offset_right = 2220.0
 offset_bottom = 1194.0
 scale = Vector2(0.21661302, 0.21661302)
 texture = ExtResource("18_bowhh")
+
+[node name="Label" type="Label" parent="TextureRect2" unique_id=1528364922]
+layout_mode = 0
+offset_left = 1288.0112
+offset_top = 553.98334
+offset_right = 1850.0112
+offset_bottom = 646.98334
+theme_override_colors/font_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+theme_override_fonts/font = SubResource("SystemFont_8ek7f")
+theme_override_font_sizes/font_size = 68
+text = "Or Click the lever"
 
 [connection signal="body_entered" from="acid" to="Player2" method="_on_acid_body_entered"]
 [connection signal="body_entered" from="ladder" to="Player2" method="_on_ladder_body_entered"]

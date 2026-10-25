@@ -17,10 +17,12 @@ func _on_killarea_body_entered(body: Node2D) -> void:
 		get_tree().reload_current_scene()
 		
 		
-func die() -> void:
+func die():
 	if dead:
 		return
 
 	dead = true
+	GameState.unlock_wing()
+
 	$AnimationPlayer.stop()
 	queue_free()
