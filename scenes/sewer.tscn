@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
 [ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
 [ext_resource type="Texture2D" uid="uid://d4aol7esgxdqh" path="res://assets/obby/tile.png" id="3_7w1x0"]
-[ext_resource type="Script" uid="uid://be2wvjw10up1c" path="res://scenes/player_sewer.gd" id="4_5bl23"]
+[ext_resource type="Script" uid="uid://bx2jl40pyixn4" path="res://scenes/player_sewer.gd" id="4_5bl23"]
 [ext_resource type="Texture2D" uid="uid://dnljnvj66jevh" path="res://assets/backgrounds/sewerpipe.png" id="4_c03w2"]
 [ext_resource type="Texture2D" uid="uid://ctua4rtxfxttf" path="res://assets/obby/tiles3.png" id="5_o2fsv"]
 [ext_resource type="Script" uid="uid://beou5o8qbt6pv" path="res://scripts/ladder.gd" id="5_tqi0o"]
@@ -485,7 +485,7 @@ position = Vector2(1134, 337)
 scale = Vector2(8.88, 8.88)
 collision_mask = 2
 script = ExtResource("16_f3kck")
-next_scene = "uid://btxjbosxblg35"
+next_scene = "uid://dv0uxf7ilslxn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TunnelEntrance" unique_id=846542535]
 shape = SubResource("RectangleShape2D_cevfm")
