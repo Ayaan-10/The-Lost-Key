@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://85be37xmsww4" path="res://bathroom.gd" id="1_3ouov"]
 [ext_resource type="Texture2D" uid="uid://bmvsq11no0lvt" path="res://assets/backgrounds/bathroom.png" id="1_gknyc"]
 [ext_resource type="PackedScene" uid="uid://rdom6kbq0d02" path="res://scenes/boss_player.tscn" id="2_j2cwc"]
-[ext_resource type="PackedScene" uid="uid://b44l1v2fs7aja" path="res://scenes/wing.tscn" id="3_j2cwc"]
 [ext_resource type="PackedScene" uid="uid://dpaffxnxc41f4" path="res://scenes/rat_boss.tscn" id="4_82jhl"]
 [ext_resource type="Texture2D" uid="uid://bp1shqai81mnp" path="res://assets/props/key.png" id="5_qfxnf"]
 
@@ -62,7 +61,7 @@ scale = Vector2(126.982635, 2.6205444)
 shape = SubResource("RectangleShape2D_nolv0")
 
 [node name="RightWall" type="StaticBody2D" parent="Background" unique_id=1881914456]
-position = Vector2(1944.008, 877.50366)
+position = Vector2(1792.5074, 877.50366)
 rotation = 1.5707964
 scale = Vector2(126.982635, 2.6205444)
 
@@ -72,7 +71,6 @@ shape = SubResource("RectangleShape2D_nolv0")
 [node name="Player" parent="." unique_id=1584332084 instance=ExtResource("2_j2cwc")]
 z_index = 2
 position = Vector2(141, 575)
-wing_scene = ExtResource("3_j2cwc")
 
 [node name="RatBoss" parent="." unique_id=52174430 instance=ExtResource("4_82jhl")]
 z_index = 1
@@ -94,9 +92,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -424.0
+offset_left = -481.0
 offset_top = -342.0
-offset_right = 424.0
+offset_right = 367.0
 offset_bottom = -302.0
 grow_horizontal = 2
 grow_vertical = 2
