@@ -5,25 +5,47 @@ extends CharacterBody2D
 const SPEED = 300.0
 const  JUMP_VELOCITY = -400
 
+var can_climb: bool = false
+var is_climbing: bool = false
+@export var climb_speed: float = 200.0
+
 func _ready() -> void:
 	print("hi")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	
+	var direction := Input.get_axis("move_left", "move_right")
+	var climbing_input := Input.get_axis("move_up", "move_down")
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		
+	# start climb when inside ladder
+	if can_climb:
+		if climbing_input != 0:
+			is_climbing = true
+	# attach to the ladder when entering it
+	if  can_climb and not is_climbing:
+		is_climbing = true
+	if is_climbing and can_climb:
+		velocity.y = climbing_input * climb_speed
+	else:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+	
+
+
 
 	if direction > 0:
 		$AnimatedSprite2D.flip_h = false
@@ -40,3 +62,12 @@ func _on_acid_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
 	
 	
+
+
+func _on_ladder_body_entered(body: Node2D) -> void:
+		body.set("can_climb", true)
+
+
+func _on_ladder_body_exited(body: Node2D) -> void:
+	body.set("can_climb", false)
+	body.set("is_climbing", false)
