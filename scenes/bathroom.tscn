@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://btxjbosxblg35"]
+
+[ext_resource type="Texture2D" uid="uid://r31vr67e0sm7" path="res://assets/obby/boulder.png" id="1_qx0gp"]
+
+[node name="Bathroom" type="Node2D" unique_id=1621026689]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1616025179]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qx0gp")
