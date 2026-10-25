@@ -33,17 +33,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 @onready var tripanim: AnimationPlayer = $tripanim
-@onready var area_2d: Area2D = $"../Area2D"
-@onready var dialouge_1: Label = $"../Dialouges/Dialouge1"
-@onready var key: TextureRect = $"../Key"
-@onready var keyfall: AnimationPlayer = $"../Key/Keyfall"
-@onready var guide_1: Label = $"../Guide/Guide1"
+@onready var area_2d: Area2D = $"../Background/Area2D"
+@onready var dialouge_1: Label = $"../Background/Dialouge1"
+@onready var key: TextureRect = $"../Background/Key"
+@onready var guide_1: Label = $"../Background/Guide1"
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	tripanim.play("trip")
 	key.visible = true
-	keyfall.play("keyfall")
 	area_2d.queue_free()
 	dialouge_1.visible = true
 	guide_1.visible = true

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
 [ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
+[ext_resource type="Texture2D" uid="uid://d4aol7esgxdqh" path="res://assets/obby/tile.png" id="3_7w1x0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8i1c"]
 
@@ -15,13 +16,6 @@ offset_bottom = 40.0
 scale = Vector2(0.29972684, 0.29972684)
 texture = ExtResource("1_j3gru")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2074138598]
-position = Vector2(383, 144)
-scale = Vector2(6.7999973, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1076031349]
-shape = SubResource("RectangleShape2D_d8i1c")
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1424224386]
 position = Vector2(460, 67)
 rotation = 1.548324
@@ -31,11 +25,12 @@ scale = Vector2(6.7999973, 1)
 shape = SubResource("RectangleShape2D_d8i1c")
 
 [node name="Player2" parent="." unique_id=201504000 instance=ExtResource("2_j3gru")]
-position = Vector2(396, 96)
-scale = Vector2(0.08, 0.08)
+z_index = 1
+position = Vector2(406, 60.000008)
+scale = Vector2(0.13341495, 0.13341495)
 
 [node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1862367338]
-position = Vector2(1243.75, 299.99997)
+position = Vector2(0.000102996826, -5.340576e-05)
 rotation = 3.1415927
 scale = Vector2(8.625005, 0.6250007)
 zoom = Vector2(2, 2)
@@ -53,5 +48,60 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_4satd")
 
 [node name="tiles" type="Node" parent="." unique_id=1123543359]
+
+[node name="platoform" type="Node" parent="." unique_id=1948558850]
+
+[node name="platform1" type="StaticBody2D" parent="platoform" unique_id=2074138598]
+position = Vector2(383, 144)
+scale = Vector2(6.7999973, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platoform/platform1" unique_id=1076031349]
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="platform2" type="StaticBody2D" parent="platoform" unique_id=1288031117]
+position = Vector2(734, 494)
+scale = Vector2(11.618529, 5.9562445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platoform/platform2" unique_id=1115347086]
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="Platform2" type="TextureRect" parent="platoform" unique_id=1111753093]
+offset_left = 213.00002
+offset_top = 478.0
+offset_right = 817.0
+offset_bottom = 765.0
+scale = Vector2(0.2010299, 0.2010299)
+texture = ExtResource("3_7w1x0")
+
+[node name="platform2" type="StaticBody2D" parent="platoform/Platform2" unique_id=1051478398]
+position = Vector2(303.4375, 74.61597)
+scale = Vector2(38.067123, 4.9743843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platoform/Platform2/platform2" unique_id=2120536135]
+scale = Vector2(0.67469555, 0.67469555)
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="Platform3" type="TextureRect" parent="platoform" unique_id=999495257]
+offset_left = 375.0
+offset_top = 478.0
+offset_right = 979.0
+offset_bottom = 765.0
+scale = Vector2(0.2010299, 0.2010299)
+texture = ExtResource("3_7w1x0")
+
+[node name="platform3" type="StaticBody2D" parent="platoform/Platform3" unique_id=1733884009]
+position = Vector2(303.4375, 74.61597)
+scale = Vector2(38.067123, 4.9743843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platoform/Platform3/platform3" unique_id=1083227599]
+scale = Vector2(0.67469555, 0.67469555)
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="platform4" type="StaticBody2D" parent="platoform" unique_id=1859687045]
+position = Vector2(734, 494)
+scale = Vector2(11.618529, 5.9562445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platoform/platform4" unique_id=1384895250]
+shape = SubResource("RectangleShape2D_d8i1c")
 
 [connection signal="body_entered" from="acid" to="Player2" method="_on_acid_body_entered"]
