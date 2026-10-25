@@ -4,11 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://cfs1ebywf7sm1" path="res://assets/backgrounds/street.png" id="1_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://er0u1ub6hg8r" path="res://scenes/player.tscn" id="2_cn2eb"]
 [ext_resource type="Script" uid="uid://ckx6ojv0rblnf" path="res://scripts/texture_button.gd" id="3_lki8s"]
-[ext_resource type="Texture2D" uid="uid://bp1shqai81mnp" path="res://assets/props/key.png" id="5_lki8s"]
-[ext_resource type="Texture2D" path="res://assets/character.png" id="5_t6bmd"]
-[ext_resource type="Texture2D" uid="uid://0v85sahnnjtb" path="res://assets/Wiseman.png" id="6_d7a6c"]
+[ext_resource type="Texture2D" uid="uid://bfms8hxholkut" path="res://assets/characters/player/idle1.png" id="3_p837x"]
+[ext_resource type="FontFile" uid="uid://cvq5i0wiq3ve6" path="res://assets/PatrickHand-Regular.ttf" id="4_p837x"]
+[ext_resource type="Texture2D" uid="uid://bp1shqai81mnp" path="res://assets/key.png" id="5_lki8s"]
 [ext_resource type="PackedScene" uid="uid://dbrttcgdqg5f6" path="res://scene_transitions.tscn" id="8_g2j0d"]
 [ext_resource type="Script" uid="uid://cel7jaadul8e3" path="res://teleporter_button.gd" id="9_p837x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eh81"]
+bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 14
+border_color = Color(0.33288068, 0.33288074, 0.33288044, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h83ex"]
 bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
@@ -23,8 +31,8 @@ expand_margin_right = 7.0
 expand_margin_bottom = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nolv0"]
-atlas = ExtResource("5_t6bmd")
-region = Rect2(399.30322, 157.71692, 563.2191, 510.6178)
+atlas = ExtResource("3_p837x")
+region = Rect2(-0.84625244, 94.99999, 707.38446, 552.73456)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2j0d"]
 bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
@@ -38,9 +46,7 @@ expand_margin_top = 5.0
 expand_margin_right = 7.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ek7f"]
-atlas = ExtResource("6_d7a6c")
-region = Rect2(156.6886, 25.272339, 1023.86816, 910.70386)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig65t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p837x"]
 bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
@@ -180,7 +186,9 @@ _data = {
 &"sizesmall": SubResource("Animation_t6bmd")
 }
 
-[node name="Scene1" type="Node2D" unique_id=1886820277]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yu5tm"]
+
+[node name="outside" type="Node2D" unique_id=1886820277]
 script = ExtResource("1_d7a6c")
 
 [node name="GameManager" type="Node" parent="." unique_id=493906240]
@@ -193,7 +201,22 @@ offset_bottom = 1080.0
 scale = Vector2(0.66620237, 0.66620237)
 texture = ExtResource("1_t6bmd")
 
-[node name="Dialouge1" type="Label" parent="GameManager/Background" unique_id=1275277168]
+[node name="Label" type="Label" parent="GameManager/Background" unique_id=580412175]
+layout_mode = 0
+offset_left = 252.17561
+offset_top = 267.18604
+offset_right = 1063.1757
+offset_bottom = 714.18604
+scale = Vector2(0.63676363, 0.3932476)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p837x")
+theme_override_font_sizes/font_size = 108
+theme_override_styles/normal = SubResource("StyleBoxFlat_0eh81")
+text = "Okay...
+A totally normal day.
+Let's go get milk."
+
+[node name="playerkey" type="Label" parent="GameManager/Background" unique_id=1275277168]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -209,20 +232,21 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2276342, 1.2089628)
 theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+theme_override_fonts/font = ExtResource("4_p837x")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_h83ex")
 text = "Nooo! MY KEY! "
 
-[node name="TextureRect" type="TextureRect" parent="GameManager/Background/Dialouge1" unique_id=456781502]
+[node name="TextureRect" type="TextureRect" parent="GameManager/Background/playerkey" unique_id=456781502]
 layout_mode = 0
-offset_left = -104.30293
-offset_top = -28.154263
-offset_right = 458.69708
-offset_bottom = 481.84573
-scale = Vector2(0.18533346, 0.18533346)
+offset_left = -100.76181
+offset_top = -24.002293
+offset_right = 606.23816
+offset_bottom = 527.9977
+scale = Vector2(0.16292648, 0.16292648)
 texture = SubResource("AtlasTexture_nolv0")
 
-[node name="Dialouge2" type="Label" parent="GameManager/Background" unique_id=2058565286]
+[node name="potionman" type="Label" parent="GameManager/Background" unique_id=2058565286]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -230,28 +254,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 593.7407
-offset_top = -488.32495
-offset_right = 1003.7412
-offset_bottom = -309.32495
+offset_left = 593.7417
+offset_top = -125.71146
+offset_right = 1003.7417
+offset_bottom = 53.288574
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.3529887, 1.3324106)
+scale = Vector2(1.2256812, 1.2070394)
 theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+theme_override_fonts/font = ExtResource("4_p837x")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2j0d")
 text = "Dont worry my child!
  i'll make you small 
 go and get your key!"
 
-[node name="TextureRect" type="TextureRect" parent="GameManager/Background/Dialouge2" unique_id=1605417170]
+[node name="TextureRect" type="TextureRect" parent="GameManager/Background/potionman" unique_id=1605417170]
 layout_mode = 0
 offset_left = -207.28542
 offset_top = -1.3406792
 offset_right = 815.7146
 offset_bottom = 908.6593
 scale = Vector2(0.19976503, 0.19976503)
-texture = SubResource("AtlasTexture_8ek7f")
+texture = SubResource("AtlasTexture_ig65t")
 flip_h = true
 
 [node name="Guide1" type="Label" parent="GameManager/Background" unique_id=1008740650]
@@ -270,6 +295,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0698026, 1.0535315)
 theme_override_colors/font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+theme_override_fonts/font = ExtResource("4_p837x")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_p837x")
 text = "Click the potions master
@@ -295,11 +321,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Background/Area2D" unique_id=320114905]
 shape = SubResource("RectangleShape2D_8ek7f")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="GameManager/Background" unique_id=1528017195]
+[node name="groundbody" type="StaticBody2D" parent="GameManager/Background" unique_id=1528017195]
 position = Vector2(1881.9717, 760.1232)
 scale = Vector2(305.89355, 7.1765413)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Background/StaticBody2D" unique_id=322609950]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Background/groundbody" unique_id=322609950]
 scale = Vector2(0.7116495, 0.4641439)
 shape = SubResource("RectangleShape2D_nolv0")
 
@@ -338,7 +364,7 @@ script = ExtResource("9_p837x")
 [node name="Player" parent="GameManager" unique_id=201504000 instance=ExtResource("2_cn2eb")]
 visibility_layer = 2
 z_index = 1
-position = Vector2(106, 372)
+position = Vector2(106, 372.00003)
 scale = Vector2(0.25, 0.25)
 
 [node name="tripanim" type="AnimationPlayer" parent="GameManager/Player" unique_id=805963890]
@@ -353,9 +379,25 @@ limit_top = 0
 limit_right = 2560
 limit_bottom = 720
 
+[node name="world border2" type="StaticBody2D" parent="GameManager" unique_id=758164502]
+position = Vector2(-15.000001, 1)
+rotation = -3.1415927
+scale = Vector2(19.626595, -48.48049)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/world border2" unique_id=1471683446]
+shape = SubResource("SegmentShape2D_yu5tm")
+
+[node name="world border" type="StaticBody2D" parent="GameManager" unique_id=1306519201]
+position = Vector2(2569.0002, 0)
+rotation = -3.1415927
+scale = Vector2(19.626595, -48.48049)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/world border" unique_id=62873229]
+shape = SubResource("SegmentShape2D_yu5tm")
+
 [node name="SceneTransitions" parent="." unique_id=567649900 instance=ExtResource("8_g2j0d")]
 
 [connection signal="body_entered" from="GameManager/Background/Area2D" to="GameManager/Player" method="_on_area_2d_body_entered"]
-[connection signal="tree_entered" from="GameManager/Background/StaticBody2D/CollisionShape2D" to="GameManager/Background/Key" method="_on_collision_shape_2d_tree_entered"]
+[connection signal="tree_entered" from="GameManager/Background/groundbody/CollisionShape2D" to="GameManager/Background/Key" method="_on_collision_shape_2d_tree_entered"]
 [connection signal="pressed" from="GameManager/Background/PotionMan" to="GameManager/Background/PotionMan" method="_on_pressed"]
 [connection signal="pressed" from="GameManager/Background/TeleporterButton" to="." method="_on_teleporter_button_pressed"]

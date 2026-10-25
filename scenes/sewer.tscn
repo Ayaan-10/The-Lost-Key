@@ -3,13 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
 [ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
 [ext_resource type="Texture2D" uid="uid://d4aol7esgxdqh" path="res://assets/obby/tile.png" id="3_7w1x0"]
+[ext_resource type="Script" uid="uid://be2wvjw10up1c" path="res://scenes/player_sewer.gd" id="4_5bl23"]
 [ext_resource type="Texture2D" uid="uid://dnljnvj66jevh" path="res://assets/backgrounds/sewerpipe.png" id="4_c03w2"]
 [ext_resource type="Texture2D" uid="uid://ctua4rtxfxttf" path="res://assets/obby/tiles3.png" id="5_o2fsv"]
 [ext_resource type="Script" uid="uid://beou5o8qbt6pv" path="res://scripts/ladder.gd" id="5_tqi0o"]
 [ext_resource type="Texture2D" uid="uid://cik7obq7i4iu2" path="res://assets/obby/tiles2.png" id="5_uvv2d"]
 [ext_resource type="Script" uid="uid://c8j6elwdn8swo" path="res://scripts/boulder.gd" id="8_5mp03"]
+[ext_resource type="Texture2D" uid="uid://r31vr67e0sm7" path="res://assets/obby/boulder.png" id="9_4dbh0"]
 [ext_resource type="Script" uid="uid://d1rckxnf05mp2" path="res://scripts/cockroach.gd" id="9_wf3md"]
 [ext_resource type="Script" uid="uid://cra5h7g30ywfi" path="res://scripts/lever.gd" id="10_1ydho"]
+[ext_resource type="Texture2D" uid="uid://bpofajed0yhtv" path="res://assets/characters/cockroach.png" id="11_lt782"]
+[ext_resource type="Texture2D" uid="uid://cf2t8ib1okpgh" path="res://assets/obby/lever.png" id="13_w8s63"]
+[ext_resource type="Texture2D" uid="uid://y7wfpf3544ix" path="res://assets/obby/barrier.png" id="14_lt782"]
+[ext_resource type="Texture2D" uid="uid://d2h08ssgw5lno" path="res://assets/obby/rope.png" id="15_w8s63"]
+[ext_resource type="Script" uid="uid://j7x0uhbxb7p6" path="res://scripts/tunnel_entrance.gd" id="16_f3kck"]
+[ext_resource type="Texture2D" uid="uid://b5amvd07nm8fe" path="res://assets/instructions.png" id="18_bowhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2fsv"]
 size = Vector2(20.294127, 53.128143)
@@ -54,7 +62,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5mp03"]
 resource_name = "up and down"
-length = 1.5
+length = 1.7666667
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -63,7 +71,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(550, 508), Vector2(550, 207)]
@@ -80,6 +88,126 @@ size = Vector2(499.89905, 164.48364)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83dn8"]
 size = Vector2(28.235949, 213)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny80r"]
+radius = 17.262676
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0x38"]
+radius = 49.09175
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f3kck"]
+radius = 48.0
+height = 138.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vqop"]
+size = Vector2(96, 38)
+
+[sub_resource type="Animation" id="Animation_lt782"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(784, 407)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w8s63"]
+resource_name = "walk"
+length = 2.3666666
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.78),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(784, 407), Vector2(679, 404.991)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333, 1.76),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3kck"]
+_data = {
+&"RESET": SubResource("Animation_lt782"),
+&"walk": SubResource("Animation_w8s63")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dbh0"]
+size = Vector2(112, 100)
+
+[sub_resource type="Animation" id="Animation_f3kck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e0x38"]
+resource_name = "flip"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bl23"]
+_data = {
+&"RESET": SubResource("Animation_f3kck"),
+&"flip": SubResource("Animation_e0x38")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8s63"]
+size = Vector2(20, 746.0873)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cevfm"]
 
 [node name="Node2D" type="Node2D" unique_id=1423393321]
 
@@ -111,12 +239,13 @@ shape = SubResource("RectangleShape2D_o2fsv")
 z_index = 1
 position = Vector2(406, 60.000008)
 scale = Vector2(0.12, 0.12)
+script = ExtResource("4_5bl23")
 
 [node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1862367338]
 position = Vector2(0.000102996826, -5.340576e-05)
 rotation = 3.1415927
 scale = Vector2(8.625005, 0.6250007)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1150
@@ -185,6 +314,23 @@ position = Vector2(-0.13067627, 5.5)
 scale = Vector2(0.67469513, 0.67469525)
 shape = SubResource("RectangleShape2D_1ydho")
 
+[node name="Platform5" type="TextureRect" parent="platforms" unique_id=616572142]
+offset_left = 872.0
+offset_top = 408.0
+offset_right = 1476.0
+offset_bottom = 695.0
+scale = Vector2(0.2010299, 0.2010299)
+texture = ExtResource("3_7w1x0")
+
+[node name="platform3" type="StaticBody2D" parent="platforms/Platform5" unique_id=970132088]
+position = Vector2(303.4375, 74.61597)
+scale = Vector2(38.067123, 4.9743843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/Platform5/platform3" unique_id=332873840]
+position = Vector2(-0.13067627, 5.5)
+scale = Vector2(0.67469513, 0.67469525)
+shape = SubResource("RectangleShape2D_1ydho")
+
 [node name="Platform4" type="TextureRect" parent="platforms" unique_id=1273006844]
 offset_left = 608.00006
 offset_top = 183.00002
@@ -245,50 +391,118 @@ script = ExtResource("5_tqi0o")
 position = Vector2(-0.32832336, -65.5)
 shape = SubResource("RectangleShape2D_83dn8")
 
-[node name="boulder" type="RigidBody2D" parent="." unique_id=1384056615]
+[node name="boulder" type="RigidBody2D" parent="." unique_id=1384056615 node_paths=PackedStringArray("cockroach", "gate")]
 z_index = 3
-position = Vector2(796, 181)
+position = Vector2(785, 265)
 freeze = true
 script = ExtResource("8_5mp03")
+cockroach = NodePath("../cockroach")
+gate = NodePath("../gate")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boulder" unique_id=1466605008]
+scale = Vector2(2.48, 2.48)
+shape = SubResource("CircleShape2D_ny80r")
 
 [node name="Sprite2D" type="Sprite2D" parent="boulder" unique_id=1501623641]
+scale = Vector2(0.07668268, 0.07668268)
+texture = ExtResource("9_4dbh0")
 
 [node name="hitarea" type="Area2D" parent="boulder" unique_id=1568076581]
+scale = Vector2(0.84000003, 0.84000003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boulder/hitarea" unique_id=1658294033]
-
-[node name="CockroachPlatform" type="StaticBody2D" parent="." unique_id=879909676]
-
-[node name="Sprite2D" type="Sprite2D" parent="CockroachPlatform" unique_id=1290488523]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CockroachPlatform" unique_id=167576656]
+shape = SubResource("CircleShape2D_e0x38")
 
 [node name="cockroach" type="CharacterBody2D" parent="." unique_id=1754569544]
+position = Vector2(784, 407)
 script = ExtResource("9_wf3md")
 
 [node name="Sprite2D" type="Sprite2D" parent="cockroach" unique_id=497409114]
+scale = Vector2(0.22489247, 0.22489247)
+texture = ExtResource("11_lt782")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cockroach" unique_id=2072226442]
+position = Vector2(18, 5)
+scale = Vector2(1, 0.27999508)
+shape = SubResource("CapsuleShape2D_f3kck")
+
+[node name="killarea" type="Area2D" parent="cockroach" unique_id=1501877849]
+position = Vector2(-9.895874, -11.694337)
+scale = Vector2(1.2575439, 1.7192055)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cockroach/killarea" unique_id=2139710800]
+position = Vector2(16, 6)
+shape = SubResource("RectangleShape2D_3vqop")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cockroach" unique_id=1881347570]
+libraries/ = SubResource("AnimationLibrary_f3kck")
+autoplay = &"walk"
 
 [node name="lever" type="Area2D" parent="." unique_id=1929334317 node_paths=PackedStringArray("boulder")]
+position = Vector2(690.99994, 161.99998)
+scale = Vector2(0.48565155, 0.48565155)
+collision_mask = 2
 script = ExtResource("10_1ydho")
 boulder = NodePath("../boulder")
 
 [node name="Sprite2D" type="Sprite2D" parent="lever" unique_id=821615378]
+scale = Vector2(0.1312911, 0.1312911)
+texture = ExtResource("13_w8s63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lever" unique_id=1944313397]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_4dbh0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lever" unique_id=311322521]
+libraries/ = SubResource("AnimationLibrary_5bl23")
 
 [node name="gate" type="StaticBody2D" parent="." unique_id=221796209]
+z_index = 6
+position = Vector2(1020.0001, 337)
+scale = Vector2(0.23589727, 0.23589727)
 
 [node name="Sprite2D" type="Sprite2D" parent="gate" unique_id=701957954]
+position = Vector2(-12.717919, 0)
+scale = Vector2(0.33021507, 0.69300085)
+texture = ExtResource("14_lt782")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate" unique_id=570581311]
+scale = Vector2(7.9521794, 1.0000002)
+shape = SubResource("RectangleShape2D_w8s63")
+
+[node name="rope" type="TextureRect" parent="." unique_id=406832895]
+offset_left = 748.0
+offset_top = 15.000004
+offset_right = 929.0
+offset_bottom = 734.0
+scale = Vector2(0.32521522, 0.32521522)
+texture = ExtResource("15_w8s63")
+
+[node name="TunnelEntrance" type="Area2D" parent="." unique_id=1109255412]
+position = Vector2(1134, 337)
+scale = Vector2(8.88, 8.88)
+collision_mask = 2
+script = ExtResource("16_f3kck")
+next_scene = "uid://btxjbosxblg35"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TunnelEntrance" unique_id=846542535]
+shape = SubResource("RectangleShape2D_cevfm")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=200052981]
+offset_left = 300.0
+offset_top = 114.0
+offset_right = 2220.0
+offset_bottom = 1194.0
+scale = Vector2(0.21661302, 0.21661302)
+texture = ExtResource("18_bowhh")
 
 [connection signal="body_entered" from="acid" to="Player2" method="_on_acid_body_entered"]
 [connection signal="body_entered" from="ladder" to="Player2" method="_on_ladder_body_entered"]
 [connection signal="body_exited" from="ladder" to="Player2" method="_on_ladder_body_exited"]
 [connection signal="body_entered" from="boulder/hitarea" to="boulder" method="_on_hitarea_body_entered"]
+[connection signal="body_entered" from="cockroach/killarea" to="cockroach" method="_on_killarea_body_entered"]
 [connection signal="body_entered" from="lever" to="lever" method="_on_body_entered"]
 [connection signal="body_exited" from="lever" to="lever" method="_on_body_exited"]
+[connection signal="body_entered" from="TunnelEntrance" to="TunnelEntrance" method="_on_body_entered"]

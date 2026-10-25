@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 @onready var player: CharacterBody2D = $"../../Player"
 @onready var become_smol: AnimationPlayer = $"../../Player/BecomeSmol"
 @onready var potion_man: TextureButton = $"."
-@onready var dialouge_2: Label = $"../Dialouge2"
+@onready var dialouge_2: Label = $"../potionman"
 @onready var guide_1: Label = $"../Guide1"
 @onready var teleporter_button: Button = $"../TeleporterButton"
 @onready var camera_2d: Camera2D = $"../../Player/Camera2D"

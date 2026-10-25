@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LostKeys | Jame gam"
-run/main_scene="uid://cvb14115dd06u"
+run/main_scene="uid://dlchieyl68tbe"
 config/features=PackedStringArray("4.7", "Mobile")
 
 [display]

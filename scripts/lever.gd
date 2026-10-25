@@ -3,6 +3,9 @@ extends Area2D
 
 @export var boulder: RigidBody2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
 var player_nearby = false
 var activated = false
 
@@ -10,6 +13,7 @@ func _process(_delta: float) -> void:
 	if player_nearby and not activated:
 		if Input.is_key_pressed(KEY_E):
 			activated = true
+			animation_player.play("flip")
 			boulder.release()
 
 
