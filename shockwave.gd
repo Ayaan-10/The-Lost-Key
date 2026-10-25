@@ -6,12 +6,10 @@ var radius = 20.0
 var expansion_speed = 430.0
 var already_hit = false
 
-@onready var sprite: Sprite2D = $Sprite2D
-
 
 func _ready():
 	add_to_group("boss_hazards")
-	update_size()
+	$Sprite2D.hide()
 
 
 func _physics_process(delta):
@@ -25,8 +23,7 @@ func _physics_process(delta):
 
 	var previous_radius = radius
 	radius += expansion_speed * delta
-
-	update_size()
+	queue_redraw()
 
 	var distance_from_center = absf(
 		player.global_position.x - global_position.x
@@ -49,10 +46,34 @@ func _physics_process(delta):
 		queue_free()
 
 
-func update_size():
-	var image_scale = radius / 78.0
+func _draw():
+	var points = PackedVector2Array()
+	var depth = minf(radius * 0.08, 35.0)
+	
+	for i in range(97):
+		var angle = TAU * float(i) / 96.0
 
-	sprite.scale = Vector2(
-		image_scale,
-		image_scale * 0.18
+		points.append(Vector2(
+			cos(angle) * radius,
+			sin(angle) * radius * 0.25
+		))
+
+	var opacity = 1.0 - clampf(
+		(radius - 1050.0) / 350.0,
+		0.0,
+		1.0
+	)
+
+	draw_polyline(
+		points,
+		Color(0.72, 0.48, 0.95, opacity),
+		5.0,
+		true
+	)
+
+	draw_polyline(
+		points,
+		Color(0.91, 0.79, 1.0, opacity),
+		1.5,
+		true
 	)

@@ -109,6 +109,7 @@ height = 82.0
 [node name="BossPlayer" type="CharacterBody2D" unique_id=1584332084]
 collision_layer = 2
 script = ExtResource("1_5i7dm")
+wing_scene = ExtResource("14_qj8bj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=853566768]
 position = Vector2(0, -89.44)
@@ -119,5 +120,3 @@ animation = &"throw"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044833152]
 position = Vector2(0, -41)
 shape = SubResource("CapsuleShape2D_h83ex")
-
-[node name="Wing" parent="." unique_id=780789072 instance=ExtResource("14_qj8bj")]
