@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dyc1dvhv2qsj0"]
+
+[ext_resource type="Texture2D" uid="uid://cr4rlpxga68yn" path="res://assets/backgrounds/sewerbg.png" id="1_j3gru"]
+[ext_resource type="PackedScene" uid="uid://xgpjmi2mlfc" path="res://scenes/player-sewer.tscn" id="2_j3gru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8i1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4satd"]
+
+[node name="Node2D" type="Node2D" unique_id=1423393321]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=325008344]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.29972684, 0.29972684)
+texture = ExtResource("1_j3gru")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2074138598]
+position = Vector2(383, 144)
+scale = Vector2(6.7999973, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1076031349]
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1424224386]
+position = Vector2(460, 67)
+rotation = 1.548324
+scale = Vector2(6.7999973, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1890728735]
+shape = SubResource("RectangleShape2D_d8i1c")
+
+[node name="Player2" parent="." unique_id=201504000 instance=ExtResource("2_j3gru")]
+position = Vector2(396, 96)
+scale = Vector2(0.08, 0.08)
+
+[node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1862367338]
+position = Vector2(1243.75, 299.99997)
+rotation = 3.1415927
+scale = Vector2(8.625005, 0.6250007)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 647
+
+[node name="acid" type="Area2D" parent="." unique_id=1683207103]
+position = Vector2(592, 575)
+scale = Vector2(66.24617, -7.0941253)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="acid" unique_id=1778079276]
+shape = SubResource("RectangleShape2D_4satd")
+
+[node name="tiles" type="Node" parent="." unique_id=1123543359]
+
+[connection signal="body_entered" from="acid" to="Player2" method="_on_acid_body_entered"]
