@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b44l1v2fs7aja"]
+
+[ext_resource type="Script" uid="uid://r8nkwvdmu6jb" path="res://wing.gd" id="1_psoll"]
+[ext_resource type="Texture2D" uid="uid://b3o04swcgd8jq" path="res://assets/props/wing.png" id="2_0eht4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrdum"]
+radius = 24.0
+
+[node name="Wing" type="Area2D" unique_id=780789072]
+z_index = 2
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_psoll")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1399487038]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_0eht4")
+region_enabled = true
+region_rect = Rect2(674, 330, 349, 411)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=729921599]
+shape = SubResource("CircleShape2D_lrdum")

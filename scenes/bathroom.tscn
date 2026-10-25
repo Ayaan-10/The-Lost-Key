@@ -1,10 +1,100 @@
-[gd_scene format=3 uid="uid://btxjbosxblg35"]
+[gd_scene format=3 uid="uid://dv0uxf7ilslxn"]
 
-[ext_resource type="Texture2D" uid="uid://r31vr67e0sm7" path="res://assets/obby/boulder.png" id="1_qx0gp"]
+[ext_resource type="Script" uid="uid://85be37xmsww4" path="res://bathroom.gd" id="1_3ouov"]
+[ext_resource type="Texture2D" uid="uid://bmvsq11no0lvt" path="res://assets/backgrounds/bathroom.png" id="1_gknyc"]
+[ext_resource type="PackedScene" uid="uid://rdom6kbq0d02" path="res://scenes/boss_player.tscn" id="2_j2cwc"]
+[ext_resource type="PackedScene" uid="uid://b44l1v2fs7aja" path="res://scenes/wing.tscn" id="3_j2cwc"]
+[ext_resource type="PackedScene" uid="uid://dpaffxnxc41f4" path="res://scenes/rat_boss.tscn" id="4_82jhl"]
+[ext_resource type="Texture2D" uid="uid://bp1shqai81mnp" path="res://assets/props/key.png" id="5_qfxnf"]
 
-[node name="Bathroom" type="Node2D" unique_id=1621026689]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nolv0"]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1616025179]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_qx0gp")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nolv0"]
+bg_color = Color(0.92941177, 0.8784314, 0.81960785, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0885599, 0.08855995, 0.088559814, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Bathroom" type="Node2D" unique_id=177836336]
+script = ExtResource("1_3ouov")
+
+[node name="Background" type="TextureRect" parent="." unique_id=78545741]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6666638, 0.6666638)
+texture = ExtResource("1_gknyc")
+
+[node name="Floor" type="StaticBody2D" parent="Background" unique_id=1686195437]
+position = Vector2(996.0042, 877.50366)
+scale = Vector2(126.982635, 2.6205444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Floor" unique_id=1055151174]
+shape = SubResource("RectangleShape2D_nolv0")
+
+[node name="LeftWall" type="StaticBody2D" parent="Background" unique_id=1403331132]
+position = Vector2(-25.500103, 877.50366)
+rotation = 1.5707964
+scale = Vector2(126.982635, 2.6205444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/LeftWall" unique_id=2110110038]
+shape = SubResource("RectangleShape2D_nolv0")
+
+[node name="RightWall" type="StaticBody2D" parent="Background" unique_id=1881914456]
+position = Vector2(1944.008, 877.50366)
+rotation = 1.5707964
+scale = Vector2(126.982635, 2.6205444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/RightWall" unique_id=931436531]
+shape = SubResource("RectangleShape2D_nolv0")
+
+[node name="Player" parent="." unique_id=1584332084 instance=ExtResource("2_j2cwc")]
+z_index = 2
+position = Vector2(141, 575)
+wing_scene = ExtResource("3_j2cwc")
+
+[node name="RatBoss" parent="." unique_id=52174430 instance=ExtResource("4_82jhl")]
+z_index = 1
+position = Vector2(1050, 600)
+
+[node name="Key" type="Sprite2D" parent="." unique_id=409799006]
+z_index = 5
+position = Vector2(1120, 528)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_qfxnf")
+region_enabled = true
+region_rect = Rect2(730, 390, 215, 295)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=724477319]
+
+[node name="Message" type="Label" parent="UI" unique_id=484075305]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -342.0
+offset_right = 424.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.023529412, 0.023529412, 0.023529412, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_nolv0")
+text = "It looks like the rat stole your key! RAH (Click it or press E near it to get it)"
+horizontal_alignment = 1

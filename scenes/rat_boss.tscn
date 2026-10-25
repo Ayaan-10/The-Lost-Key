@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dpaffxnxc41f4"]
+
+[ext_resource type="Script" uid="uid://6wk3ubbbn1pk" path="res://rat_boss.gd" id="1_0bs6q"]
+[ext_resource type="Texture2D" uid="uid://cv0g762khgrxi" path="res://assets/characters/mouse/Mouse Acid Attack.png" id="1_0i0mp"]
+[ext_resource type="Texture2D" uid="uid://xuyhwghsniok" path="res://assets/characters/mouse/Mouse Angry.png" id="2_0bs6q"]
+[ext_resource type="Texture2D" uid="uid://c4itdn3tluk4w" path="res://assets/characters/mouse/Mouse Dead.png" id="3_epock"]
+[ext_resource type="Texture2D" uid="uid://cvt5wxhrvt6nb" path="res://assets/characters/mouse/Mouse Attack.png" id="4_iifew"]
+[ext_resource type="Texture2D" uid="uid://x1u64em4wkc4" path="res://assets/characters/mouse/Mouse Boulder.png" id="5_bs5gh"]
+[ext_resource type="Texture2D" uid="uid://bgrmgh7w7wvu6" path="res://assets/characters/mouse/Mouse Sleeping.png" id="6_5o703"]
+[ext_resource type="PackedScene" uid="uid://c1g8pm6w25da5" path="res://scenes/shockwave.tscn" id="8_epock"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nolv0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0i0mp")
+}],
+"loop": 0,
+"name": &"acid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0bs6q")
+}],
+"loop": 1,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_epock")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_iifew")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bs5gh")
+}],
+"loop": 1,
+"name": &"roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5o703")
+}],
+"loop": 1,
+"name": &"sleep",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h83ex"]
+radius = 100.0
+height = 270.0
+
+[node name="RatBoss" type="Node2D" unique_id=52174430]
+script = ExtResource("1_0bs6q")
+shockwave_scene = ExtResource("8_epock")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1261357925]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nolv0")
+animation = &"sleep"
+offset = Vector2(32, -279)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1282434502]
+position = Vector2(0, -135)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1691683737]
+shape = SubResource("CapsuleShape2D_h83ex")
+
+[node name="Shockwave" parent="." unique_id=1940993092 instance=ExtResource("8_epock")]
