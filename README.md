@@ -20,12 +20,4 @@ LostKeys is a small 2D platform game made in Godot 4.7. It starts on the street,
 2. Clone or download this repository.
 3. Import `project.godot` in Godot and run the project.
 
-The repository also includes a web export in `web-export/`.
 
-## Screenshot
-
-Add a screenshot from the game here (not the Godot logo):
-
-`![LostKeys gameplay](screenshots/gameplay.png)`
-
-I made LostKeys as a personal game project. The art, scenes, and scripts are in this repository.
